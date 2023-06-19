@@ -1,41 +1,34 @@
-import java.util.Scanner;
-  public class Main {
+ public class Main {
       public static void main(String[] args) {
-          bilshe(3, 4);
-          menshe(6, 7);
 
-          int p1;
-          System.out.println("Введіть число");
-          Scanner input = new Scanner(System.in);
-          p1 = input.nextInt();
-
-          if (p1 % 2 == 0) {
-              System.out.println("Число парне");
-          } else {
-              System.out.println("Число не парне");
+          // Завдання 1
+          for (int number = 1; number <= 100; number = number + 1){
+              System.out.println(number);
           }
+
+          // Завдання 2
+          for (int number2 = 0; number2 <= 100; number2 = number2 + 1){
+              if (number2 % 2 == 0) {
+                  System.out.println(number2);
+              }
+          }
+
+          // Завдання 3
+          int i = 1;
+          int fact = 1;
+          do {
+              fact = fact * i;
+              System.out.println(fact);
+              i++;
+          } while (i <= 5);
+
+          //Завдання 4
+          int f2 = 0;
+          for (int f = 1; f2 < 100; f = f + f2){
+              System.out.println(f);
+              f2 = f + f2;
+              if (f2 > 100)
+                  break;
+              System.out.println(f2); }
       }
-
-          private static void bilshe ( int b1, int b2){
-              if (b1 > b2) {
-                  System.out.println("b1 > b2");
-              }
-              if (b1 < b2) {
-                  System.out.println("b1 < b2");
-              } else {
-                  System.out.println("b1 = b2");
-              }
-
-          }
-
-          private static void menshe ( int m1, int m2 ){
-              if (m1 < m2)
-                  System.out.println("m1 < m2");
-              if (m1 > m2)
-                  System.out.println("m1 > m2");
-              else
-                  System.out.println("Числа рівні");
-
-          }
-
   }
