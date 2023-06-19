@@ -20,7 +20,7 @@
               fact = fact * i;
               System.out.println(fact);
               i++;
-          } while (i <= 5);
+          } while (i <= 7);
 
           //Завдання 4
           int f2 = 0;
