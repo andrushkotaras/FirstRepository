@@ -4,6 +4,34 @@ import java.util.Scanner;
 import java.util.Random;
 public class Main {
       public static void main(String[] args) {
+
+          Student oleh = new Student("Oleh", "Gents",17);
+          Student pavlo = new Student();
+          pavlo.setName("Pavlo");
+          System.out.println(oleh.getSurname());
+          Teacher vchytel = new Teacher();
+          vchytel.setStudent("oleh");
+
+
+      }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           /*
           //Дз №6
           // Завдання 1
@@ -36,27 +64,7 @@ public class Main {
                   break;
               System.out.println(f2); }
 
-          //Дз №7
-          // Завдання 1
-          System.out.print("Введіть число: ");
-          Scanner sc = new Scanner(System.in);
-          int scanNumber = sc.nextInt();
-          System.out.println(cub(scanNumber));
 
-          // Завдання 2
-          System.out.print("Кількість зірочок: ");
-          Scanner st = new Scanner(System.in);
-          int stars = st.nextInt();
-          starsMethod(stars);
-
-          // Завдання 3
-          System.out.println("Введіть  число повторювань символу: ");
-          Scanner tim = new Scanner(System.in);
-          int times = tim.nextInt();
-
-          symbols(times);
-
-           */
 
           //Дз №8
           // Завдання 1
@@ -115,4 +123,3 @@ public class Main {
       }
 
      */
-  }
