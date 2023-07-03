@@ -1,4 +1,9 @@
 public class Student {
+    // Поля класу ( інформація якою володіють обєкти)
+    private String name;
+    private String surname;
+    private int age;
+
     // Констуктор класу (Способи прийому інформації про обєкти класу)
     public Student(){
     }
@@ -19,11 +24,6 @@ public class Student {
         this.age = age;
     }
 
-    // Поля класу (інформація про обєкти класу)
-    private String name;
-    private String surname;
-    private int age;
-
     // Методи класу
     public void  setName(String name){
         this.name = name;
@@ -36,6 +36,12 @@ public class Student {
     }
     public String getSurname(){
         return surname;
+    }
+    public void setAge(int age){
+        this.age = age;
+    }
+    public int getAge(){
+        return age;
     }
 
 

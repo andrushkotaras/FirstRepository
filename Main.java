@@ -9,8 +9,10 @@ public class Main {
           Student pavlo = new Student();
           pavlo.setName("Pavlo");
           System.out.println(oleh.getSurname());
-          Teacher vchytel = new Teacher();
-          vchytel.setStudent("oleh");
+          Teacher vchytel = new Teacher("Victor","Halun", 55, oleh);
+          System.out.println();
+
+
 
 
       }
