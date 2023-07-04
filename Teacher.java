@@ -41,7 +41,14 @@ public class Teacher {
     public int getAge(){
         return age;
     }
-    public void s
 
+
+    public void setStudent(Student[][] Student) {
+        this.Student = Student;
+    }
+
+    public Student[] getStudents() {
+        return students;
+    }
 
 }
