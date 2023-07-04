@@ -6,14 +6,19 @@ public class Main {
       public static void main(String[] args) {
 
           Student oleh = new Student("Oleh", "Gents",17);
-          Student pavlo = new Student();
-          pavlo.setName("Pavlo");
-          System.out.println(oleh.getSurname());
-          Teacher vchytel = new Teacher("Victor","Halun", 55, oleh);
-          System.out.println();
 
 
+          Student student = new Student("Taras", "Andrushko", 27);
 
+          Student student1 = new Student("Taras", "Andrushko", 27);
+
+          Student[] students = new Student[] {
+                  student, student1
+          };
+
+          Teacher teacher = new Teacher("Serhii", "Zhuravlov", 27, student, students);
+
+          System.out.println(teacher);
 
       }
 }
@@ -34,40 +39,7 @@ public class Main {
 
 
 
-          /*
-          //Дз №6
-          // Завдання 1
-          for (int number = 1; number <= 100; number = number + 1){
-              System.out.println(number);
-          }
-
-          // Завдання 2
-          for (int number2 = 0; number2 <= 100; number2 = number2 + 1){
-              if (number2 % 2 == 0) {
-                  System.out.println(number2);
-              }
-          }
-
-          // Завдання 3
-          int i = 1;
-          int fact = 1;
-          do {
-              fact = fact * i;
-              System.out.println(fact);
-              i++;
-          } while (i <= 7);
-
-          //Завдання 4
-          int f2 = 0;
-          for (int f = 1; f2 < 100; f = f + f2){
-              System.out.println(f);
-              f2 = f + f2;
-              if (f2 > 100)
-                  break;
-              System.out.println(f2); }
-
-
-
+        /*
           //Дз №8
           // Завдання 1
           Random random = new Random();
@@ -97,31 +69,4 @@ public class Main {
           // Завдання 6
           System.out.println("Середнє значення елементів масиву - " + suma / masyv.length);
 
-      }
-
-    /*
-
-
-      public static int cub (int scanNumber){
-          return scanNumber * scanNumber * scanNumber;
-      }
-      public static void starsMethod (int stars){
-          String star = "*";
-          if (stars > 0) {
-              System.out.println(star);
-              stars--;
-              starsMethod(stars);
-          }
-      }
-      public static void symbols (int times){
-          System.out.print("Введіть символ: ");
-          Scanner symb = new Scanner(System.in);
-          String symbol = symb.next();
-
-          while (times > 0){
-              System.out.println(symbol);
-              times--;
-          }
-      }
-
-     */
+         */

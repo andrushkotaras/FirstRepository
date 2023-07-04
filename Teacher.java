@@ -1,25 +1,27 @@
+import java.util.Arrays;
 public class Teacher {
 
     // Поля класу
     private String name;
     private String surName;
     private int age;
-    private  Student[][] Student;
-    private  Student[] students = Student[10];
+    private  Student student;
+    private Student [] students;
+
 
     // Конструктор класу
-
-    public Teacher(String name){
-        this.name = name;
-    }
-    public Teacher(String name, String surName, int age, Student i){
-        this.name = name;
-        this.surName = surName;
-    }
-    public Teacher(String name, String surName, int age,int Student[]) {
+    public Teacher(String name, String surName, int age, Student student) {
         this.name = name;
         this.surName = surName;
         this.age = age;
+        this.student = student;
+    }
+    public Teacher(String name, String surName, int age, Student student, Student[] students) {
+        this.name = name;
+        this.surName = surName;
+        this.age = age;
+        this.student = student;
+        this.students = students;
     }
 
     // Методи класу
@@ -42,13 +44,28 @@ public class Teacher {
         return age;
     }
 
-
-    public void setStudent(Student[][] Student) {
-        this.Student = Student;
+    public void setStudent(Student  student) {
+        this.student = student;
     }
-
+    public Student getStudent(){
+        return student;
+    }
     public Student[] getStudents() {
         return students;
     }
 
+    public void setStudents(Student[] students) {
+        this.students = students;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "name='" + name + '\'' +
+                ", surName='" + surName + '\'' +
+                ", age=" + age +
+                ", student=" + student +
+                ", students=" + Arrays.toString(students) +
+                '}';
+    }
 }
