@@ -1,24 +1,19 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.Random;
-public class Main {
+public class Cars {
       public static void main(String[] args) {
+        Cars vw = new SmallCars(true);
+        vw.typeOfCars();
+        Cars man = new BigCars(false);
+        man.typeOfCars();
+      }
+      // Поля класу
+      public boolean isCarSmall;
 
-          Student oleh = new Student("Oleh", "Gents",17);
-
-
-          Student student = new Student("Taras", "Andrushko", 27);
-
-          Student student1 = new Student("Taras", "Andrushko", 27);
-
-          Student[] students = new Student[] {
-                  student, student1
-          };
-
-          Teacher teacher = new Teacher("Serhii", "Zhuravlov", 27, student, students);
-
-          System.out.println(teacher);
+      // Конструктор класу
+      public Cars (boolean isCarSmall){
+            this.isCarSmall = isCarSmall;
+      }
+      // Методи класу
+      public void typeOfCars(){
 
       }
 }
