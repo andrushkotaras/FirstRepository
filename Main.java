@@ -1,13 +1,15 @@
 public class Main {
         public static void main(String[] args) {
-                // При створенні обєкту від більш абстрактного класу (Human)
-                Human driver = new Driver();
-                // Мені пропонує такий варіант викликання методу:
-                ((Driver) driver).theWholeTrip();
+                // Методи First працюють тільки з числами.
+                // Методи Second працюють виключно з рядками.
+                Pair object = new Pair();
+                object.setFirst(445566);
+                object.setSecond("dddd");
 
-                Pilot pilot = new Pilot();
-                pilot.theWholeFlight();
-
+                System.out.println( object.getFirst() + " " + object.getSecond());
+                Pair object2 = new Pair();
+                object2.setFirst(345);
+                System.out.println(object2.getFirst());
         }
 }
 
