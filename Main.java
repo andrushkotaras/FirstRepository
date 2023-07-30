@@ -10,7 +10,7 @@ public class Main {
                         int a = (int) (Math.random() * 51);
                         new HashSet<>();
                         hashSet.add(a);
-                        System.out.println( a + " HashSet");
+                        System.out.println(a + " HashSet");
                         System.out.println("Hash Code - " + hashSet.hashCode());
 
                 }
@@ -20,7 +20,7 @@ public class Main {
                         int b = (int) (Math.random() * 51);
                         new LinkedHashSet<>();
                         linkedHashSet.add(b);
-                        System.out.println( b + " (LinkedHashSet)");
+                        System.out.println(b + " (LinkedHashSet)");
                         System.out.println("Hash Code - " + linkedHashSet.hashCode());
                 }
 
@@ -28,8 +28,8 @@ public class Main {
                         int c = (int) (Math.random() * 51);
                         new TreeSet<>();
                         treeSet.add(c);
-                        System.out.println( c + " (TreeSet)");
-                     // System.out.println("Hash Code - " + treeSet.hashCode()); // Однаковий хеш код
+                        System.out.println(c + " (TreeSet)");
+                        // System.out.println("Hash Code - " + treeSet.hashCode()); // Однаковий хеш код              }
                 }
         }
 }
