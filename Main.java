@@ -29,7 +29,7 @@ public class Main {
                         new TreeSet<>();
                         treeSet.add(c);
                         System.out.println(c + " (TreeSet)");
-                        // System.out.println("Hash Code - " + treeSet.hashCode()); // Однаковий хеш код              }
+                        // System.out.println("Hash Code - " + treeSet.hashCode()); // Однаковий хеш код
                 }
         }
 }
