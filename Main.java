@@ -1,50 +1,35 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
         public static void main(String[] args) {
-                // Завдання 1
-                LinkedList<Integer> linkedList = new LinkedList<>();
-                for (int i = 1; i <= 10; i++) {
-                        linkedList.add(i);
+                Set<Integer> hashSet = new HashSet<>();
+                Set<Integer> linkedHashSet = new LinkedHashSet<>();
+                TreeSet<Integer> treeSet = new TreeSet<>();
+
+                for (int i = 0; i <= 1000; i++) {
+                        int a = (int) (Math.random() * 51);
+                        new HashSet<>();
+                        hashSet.add(a);
+                        System.out.println( a + " HashSet");
+                        System.out.println("Hash Code - " + hashSet.hashCode());
+
                 }
-                for (int i = 0; i < linkedList.size(); i++) {
-                        linkedList.get(i);
-                }
-                for (int i = 0; i < linkedList.size(); i++) {
-                        linkedList.remove(i);
-                }
+                // З лекції: HashSet не "заміняє" старий об'єкт новим.
 
-                // Завдання 2
-                ArrayList<Integer> arrayList = new ArrayList<>();
-                for (int i = 0; i <= 2000000; i++) {
-                        arrayList.add(i);
-                }
-                for (int i = 0; i < arrayList.size(); i++) {
-                        arrayList.get(i);
+                for (int i = 0; i <= 1000; i++) {
+                        int b = (int) (Math.random() * 51);
+                        new LinkedHashSet<>();
+                        linkedHashSet.add(b);
+                        System.out.println( b + " (LinkedHashSet)");
+                        System.out.println("Hash Code - " + linkedHashSet.hashCode());
                 }
 
-
-
-                // Завдання 3
-                Student oleh = new Student("Oleh");
-                Student serhii = new Student("Serhii");
-                Student taras = new Student("Taras");
-
-                List<Student> studentList = new ArrayList<>();
-                studentList.add(oleh);
-                studentList.add(serhii);
-                studentList.add(taras);
-
-                for (int i = 0; i < studentList.size(); i++){
-                        System.out.println(studentList.get(i));
+                for (int i = 0; i <= 1000; i++) {
+                        int c = (int) (Math.random() * 51);
+                        new TreeSet<>();
+                        treeSet.add(c);
+                        System.out.println( c + " (TreeSet)");
+                     // System.out.println("Hash Code - " + treeSet.hashCode()); // Однаковий хеш код
                 }
         }
 }
-
-
-
-
-
-
