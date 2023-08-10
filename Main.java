@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 import java.util.Comparator;
+import java.lang.Comparable;
 public class Main {
         public static void main(String[] args) {
               List<Student> students = new ArrayList<>();
@@ -26,12 +27,15 @@ public class Main {
               Student sahanda = new Student("Sahanda", 3.7);
               students.add(sahanda);
 
-              Comparator<Student> comparator = new Comparator<Student>() {
-                      @Override
-                      public int compare(Student o1, Student o2) {
-                              return 0;
-                      }
-              };
+              Collections.sort(students);
+
+              for (Student student: students) {
+                  System.out.println(student.getSurName() + " " + student.getMark());
+              }
+
+
+
+
 
 
         }

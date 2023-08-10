@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student> {
     private String surName;
     private double mark;
 
@@ -37,6 +37,7 @@ public class Student {
         return Double.compare(student.mark, mark) == 0 && Objects.equals(surName, student.surName);
     }
 
+
     @Override
     public int hashCode() {
         return Objects.hash(surName, mark);
@@ -48,5 +49,17 @@ public class Student {
                 "surName='" + surName + '\'' +
                 ", mark=" + mark +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Student student) {
+        if ( mark == student.getMark()) {
+            return 0;
+        }
+        if ( mark < student.getMark()){
+            return  1;
+        }
+        return -1;
     }
 }
