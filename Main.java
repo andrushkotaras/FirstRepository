@@ -2,6 +2,8 @@ import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// https://github.com/andrushkotaras/FirstRepository/blob/main/SortByMark.java
+// https://github.com/andrushkotaras/FirstRepository/blob/main/SortBySurname.java
 public class Main {
     public static void main(String[] args) {
         List<Student> students = new ArrayList<>();
