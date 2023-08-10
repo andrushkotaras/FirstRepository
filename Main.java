@@ -1,43 +1,91 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+import java.util.Comparator;
 public class Main {
         public static void main(String[] args) {
+              List<Student> students = new ArrayList<>();
 
-                Map<String, Words> wordsHashMap = new HashMap<>();
+              students.add(new Student("Andrushko", 3.4));
 
-                Words hello = new Words("Hello","Hallo","こんにちは");
-                wordsHashMap.put("Привіт", hello);
+              Student pavlenko = new Student("Pavlenko", 3.5);
+              students.add(pavlenko);
+              Student bilous = new Student("Bilous", 3.6);
+              students.add(bilous);
+              Student sahanda = new Student("Sahanda", 3.7);
+              students.add(sahanda);
 
-                Words sun = new Words("Sun","Sonne","太陽");
-                wordsHashMap.put("Сонце", sun);
+              Comparator<Student> comparator = new Comparator<Student>() {
+                      @Override
+                      public int compare(Student o1, Student o2) {
+                              return 0;
+                      }
+              };
 
-                Words happiness = new Words("Happiness","Glück","幸せ");
-                wordsHashMap.put("Щастя", happiness);
 
-                Words life = new Words("Life","Leben","人生");
-                wordsHashMap.put("Життя", life);
-
-                Words robot = new Words("Robot","Roboter","ロボット");
-                wordsHashMap.put("Робот", robot);
-
-                Words butterfly = new Words("Butterfly","Schmetterling","蝶");
-                wordsHashMap.put("Метелик", butterfly);
-
-                Words tank = new Words("Tank","Panzer","タンク");
-                wordsHashMap.put("Танк", tank);
-
-                Words give = new Words("Give","Gib es","それを与える");
-                wordsHashMap.put("Дайте", give);
-
-                Words toUs = new Words("To us","Zu uns","私たちへ");
-                wordsHashMap.put("Нам", toUs);
-
-                Words f16 = new Words("F-16","F-16","F-16");
-                wordsHashMap.put("F-16", f16);
-
-                System.out.println(wordsHashMap.get("Привіт"));
-                System.out.println(wordsHashMap.get("Дайте"));
-                System.out.println(wordsHashMap.get("Нам"));
-                System.out.println(wordsHashMap.get("F-16"));
         }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      /*  static List<String> words = new ArrayList<>();
+        private static void addWordToArrayList(){
+                System.out.println("Додайте слово до ArrayList: ");
+                Scanner scanner = new Scanner(System.in);
+                String wordToArray = scanner.next();
+                if (words.contains(wordToArray)){
+                        System.out.println("Це слово вже є в ArrayList." +
+                                " Придумайте інше слово: ");
+                        addWordToArrayList();
+                }
+                else
+                        words.add(wordToArray);
+                System.out.println(words.lastIndexOf(wordToArray));
+
+       */
+
+      /*  int i = 1;
+                while (i <= 10){
+                        System.out.println("Вводьте слово: ");
+
+                        Scanner scan = new Scanner(System.in);
+                        String word = scan.next();
+                        String noToHash = "No";
+                        String yesToHash = "Yes";
+
+                        if (word.hashCode() == noToHash.hashCode()){
+                        System.out.println(words.toString() + " Is end of program.");
+                        i = 15;
+                        }
+                        if (word.hashCode() == yesToHash.hashCode()){
+                        addWordToArrayList();
+                        }
+
+                        }
+
+       */
