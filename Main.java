@@ -1,34 +1,50 @@
+
+
 import java.util.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.Scanner;
 
-// https://github.com/andrushkotaras/FirstRepository/blob/main/SortByMark.java
-// https://github.com/andrushkotaras/FirstRepository/blob/main/SortBySurname.java
+
 public class Main {
     public static void main(String[] args) {
-        List<Student> students = new ArrayList<>();
 
-        students.add(new Student("Andrushko", 3.4)); //!!!
+        firstTask();
 
-        Student pavlenko = new Student("Pavlenko", 3.5);
-        students.add(pavlenko);
-        Student bilous = new Student("Bilous", 3.6);
-        students.add(bilous);
-        Student sahanda = new Student("Sahanda", 3.7);
-        students.add(sahanda);
-
-        System.out.println("Оригінальний лист: " + students.toString());
-
-        System.out.println("Лист відсортований по середньому балу (від більшого до меншого):");
-        Collections.sort(students, new SortByMark());
-        for (Student student : students) {
-            System.out.println(student.getSurName() + " " + student.getMark());
+    }
+    private static void firstTask (){
+        Scanner scanner = null;
+        try {
+            System.out.println("Введіть число: ");
+            scanner = new Scanner(System.in);
+            int a = scanner.nextInt();
+            System.out.println("Ваше число: " + a + " , програма завершена.");
+        } catch (InputMismatchException e) {
+            System.out.println("Input problems");
+            firstTask();
+        } finally {
+            if (scanner != null){
+                scanner.close();
+            }
         }
+    }
 
-        System.out.println("Лист відсортований в алфавітному порядку:");
-        Collections.sort(students, new SortBySurname());
-        for (Student student : students) {
-            System.out.println(student.getSurName() + " " + student.getMark());
+    private static void secondTask (){
+        Scanner scanner = null;
+        try {
+            System.out.print("Введіть чило більше 0: ");
+            scanner = new Scanner(System.in);
+            int b = scanner.nextInt();
+            System.out.println(b*b);
+        } catch (CustomExeption e){
+
         }
 
     }
