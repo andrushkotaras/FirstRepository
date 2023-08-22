@@ -1,34 +1,39 @@
-
-
 import java.util.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import java.util.Scanner;
-
-
 public class Main {
     public static void main(String[] args) {
 
-        firstTask();
+       firstTask();
+       secondTask();
 
     }
     private static void firstTask (){
-        Scanner scanner = null;
+        Scanner scanner;
         try {
-            System.out.println("Введіть число: ");
+            System.out.print("Введіть число: ");
             scanner = new Scanner(System.in);
             int a = scanner.nextInt();
             System.out.println("Ваше число: " + a + " , програма завершена.");
         } catch (InputMismatchException e) {
-            System.out.println("Input problems");
-            firstTask();
+            System.out.println("Значення не коректне");
+            firstTask(); // Також можна зробити через While (true)
+        }
+    }
+
+    private static void secondTask (){
+        Scanner scanner = null;
+        try {
+            System.out.println("Введіть число більше нуля: ");
+           scanner = new Scanner(System.in);
+            int a = scanner.nextInt();
+            int squared = calculateSquare(a);
+            System.out.println("Квадрат числа: " + squared);
+        } catch (CustomExeption e) {
+            System.out.println("Помилка: " + e.getMessage());
+        } catch (NullPointerException e){
+            System.out.println("NullPointerException");
+        } catch (NoSuchElementException e){
+            System.out.println(e.getMessage());
         } finally {
             if (scanner != null){
                 scanner.close();
@@ -36,16 +41,10 @@ public class Main {
         }
     }
 
-    private static void secondTask (){
-        Scanner scanner = null;
-        try {
-            System.out.print("Введіть чило більше 0: ");
-            scanner = new Scanner(System.in);
-            int b = scanner.nextInt();
-            System.out.println(b*b);
-        } catch (CustomExeption e){
-
+    public static int calculateSquare(int a) throws CustomExeption {
+        if (a <= 0) {
+            throw new CustomExeption("Число менше нуля, або нуль");
         }
-
+        return a * a;
     }
 }
