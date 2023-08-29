@@ -1,50 +1,105 @@
-import java.util.*;
-import java.util.Scanner;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+        String fileName = "text.txt";
+        String contentToWrite = "Текст для збереження в файлі.";
 
-       firstTask();
-       secondTask();
+        // Збереження даних у файл
+        saveToFile(fileName, contentToWrite);
 
+        // Зчитування даних з файлу
+        String contentRead = readFromFile(fileName);
+        System.out.println("Зчитано з файлу: " + contentRead);
     }
-    private static void firstTask (){
-        Scanner scanner;
+
+    // Метод для збереження даних у файл
+    public static void saveToFile(String fileName, String content) {
         try {
-            System.out.print("Введіть число: ");
-            scanner = new Scanner(System.in);
-            int a = scanner.nextInt();
-            System.out.println("Ваше число: " + a + " , програма завершена.");
-        } catch (InputMismatchException e) {
-            System.out.println("Значення не коректне");
-            firstTask(); // Також можна зробити через While (true)
+            Path filePath = Paths.get(fileName);
+            Files.write(filePath, content.getBytes(StandardCharsets.UTF_8));
+            System.out.println("Дані збережено у файл: " + fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    private static void secondTask (){
-        Scanner scanner = null;
+    // Метод для зчитування даних з файлу
+    public static String readFromFile(String fileName) {
         try {
-            System.out.println("Введіть число більше нуля: ");
-           scanner = new Scanner(System.in);
-            int a = scanner.nextInt();
-            int squared = calculateSquare(a);
-            System.out.println("Квадрат числа: " + squared);
-        } catch (CustomExeption e) {
-            System.out.println("Помилка: " + e.getMessage());
-        } catch (NullPointerException e){
-            System.out.println("NullPointerException");
-        } catch (NoSuchElementException e){
-            System.out.println(e.getMessage());
-        } finally {
-            if (scanner != null){
-                scanner.close();
+            Path filePath = Paths.get(fileName);
+            List<String> lines = Files.readAllLines(filePath, StandardCharsets.UTF_8);
+            StringBuilder content = new StringBuilder();
+            for (String line : lines) {
+                content.append(line).append("\n");
             }
+            return content.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
-    }
-
-    public static int calculateSquare(int a) throws CustomExeption {
-        if (a <= 0) {
-            throw new CustomExeption("Число менше нуля, або нуль");
-        }
-        return a * a;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import java.io.BufferedReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+public class Main {
+    public static void main(String[] args) {
+        Path path = Paths.get("text.txt");
+        try (BufferedReader reader = Files.newBufferedReader(path)){
+            byte[] bytes = Files.readAllBytes(path);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try (BufferedReader reader = Files.newBufferedReader(path)){
+            byte[] bytes = Files.readAllBytes(path);
+        String line = reader.readLine();
+        System.out.println(line);
+    } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+
+ */
