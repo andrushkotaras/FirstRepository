@@ -1,10 +1,14 @@
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
+
+        Person serhii = new Person(12,"Serhii", "Zhuravlov");
+        Person vlad = new Person(10,"Serhii", "Zhuravlov");
+        Person max = new Person(10,"Serhii", "Zhuravlov");
+
+        CheckForAgeInterceptor checkForAgeInterceptor = new CheckForAgeInterceptor();
+        checkForAgeInterceptor.checkForAgeValidation(serhii);
+        checkForAgeInterceptor.checkForAgeValidation(vlad);
+        checkForAgeInterceptor.checkForAgeValidation(max);
 
     }
 }
