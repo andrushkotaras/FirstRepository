@@ -1,15 +1,9 @@
 public class Main {
     public static void main(String[] args) {
 
-        Person serhii = new Person(12,"Serhii", "Zhuravlov");
-        Person vlad = new Person(10,"Serhii", "Zhuravlov");
-        Person max = new Person(10,"Serhii", "Zhuravlov");
-
-        CheckForAgeInterceptor checkForAgeInterceptor = new CheckForAgeInterceptor();
-        checkForAgeInterceptor.checkForAgeValidation(serhii);
-        checkForAgeInterceptor.checkForAgeValidation(vlad);
-        checkForAgeInterceptor.checkForAgeValidation(max);
-
+        // Завдання 1
+        NumberGeneratorThread generatorThread = new NumberGeneratorThread();
+        generatorThread.start();
     }
 }
 
